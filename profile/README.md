@@ -9,15 +9,11 @@ If you are an AI coding agent (Codex/Claude), read and follow the `Agent Rules O
 When starting a session, tell your agent to treat this file as an active instruction source:
 `.github/profile/README.md`
 
-## Human Setup With Agent
+## How to Setup GitHub With Agent
 
-Provide your agent with:
+The following two prompts set up first-time use with Codex/Claude to connect to your GitHub and this project. Prompt #1 should help provide you with explicit instructions for how to setup SSH to push changes/updates directly from Codex/Claude, without having to open GitHub. Prompt #2 will have Codex/Claude set up an instruction file for themselves to follow rules for version control and ensuring that we do not erase eachother's work.
 
-- Your GitHub username
-- Repo URL: `git@github.com:ATLAS-TIA/ATLAS-MAIN.git`
-- Base branch: `ATLAS-MAIN`
-
-### First-Time Setup Prompt (Copy/Paste)
+### First-Time Setup (Prompt #1)
 
 ```text
 Configure GitHub SSH access for this workstation and verify this repo is ready for contributions.
@@ -32,6 +28,7 @@ Please execute in this order:
 3) Tell me exactly where to paste that key in GitHub.
 4) Test GitHub connection.
 5) Confirm this repo is connected and ready.
+6) Set up my personal branch using my username.
 
 Important:
 - Do not push any code yet.
@@ -39,7 +36,7 @@ Important:
 - Provide concise status updates and final verification.
 ```
 
-### Policy File Setup Prompt (Copy/Paste)
+### Policy/Rule File Setup (Prompt #2)
 
 ```text
 Set up persistent agent policy files for this ATLAS repo so future sessions follow our workflow rules automatically.
@@ -47,7 +44,7 @@ Set up persistent agent policy files for this ATLAS repo so future sessions foll
 Please:
 1) Create or update AGENTS.md for Codex-style agents.
 2) Create or update CLAUDE.md (or READMECLAUDE.md if that is the active file) for Claude-style agents.
-3) Include these required rules in both files:
+3) Include these required rules in both files when working on ATLAS:
    - Never push directly to ATLAS-MAIN.
    - Always create/use a personal branch for task work.
    - Open PRs targeting ATLAS-MAIN.
@@ -71,12 +68,12 @@ Complete these steps in GitHub:
 
 ## General Engagement Instructions
 
-Use this at the start of work. You can continue in the same chat after this.
+This section provides an overview of general rules of engagement and conduct when pushing changes to your branch. Prompt #3 effectively provides the same instructions as the policy/rule setup prompt above, but may be useful as a reminder if you find that Codex/Claude is not following instructions, especially at the start of a new session.
 
-### Engagement Prompt (Copy/Paste)
+### Reminder/Instruction Prompt (Prompt #3)
 
 ```text
-You are working in repo ATLAS-MAIN.
+You are working in repo ATLAS-MAIN under my personal branch.
 
 Engagement rules:
 1) Create and use my personal branch for all work.
@@ -88,42 +85,7 @@ Engagement rules:
 7) Prepare or update a PR into ATLAS-MAIN.
 8) Do not merge until I confirm group approval.
 
-My personal branch:
-<branch-name-or-create-one>
-
-Task:
-<describe your change in plain language>
 ```
-
-### Add This Line To Any Prompt (Copy/Paste)
-
-```text
-While working, continuously reference and follow: .github/profile/README.md
-```
-
-### Continue Existing Work Prompt (Copy/Paste)
-
-```text
-Continue my existing personal branch:
-<branch-name>
-
-New request:
-<what you want changed>
-
-After editing:
-1) Push updates to the same branch.
-2) Summarize what changed in plain language.
-3) Update the PR description if needed.
-```
-
-## Merge Policy
-
-Before any merge into `ATLAS-MAIN`, confirm with the group.
-
-Required sequence:
-1) Agent prepares/updates PR into `ATLAS-MAIN`.
-2) Team reviews and confirms merge is approved.
-3) Only after group confirmation, proceed with merge.
 
 ## Agent Rules Of Engagement
 
