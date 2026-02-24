@@ -39,6 +39,25 @@ Important:
 - Provide concise status updates and final verification.
 ```
 
+### Policy File Setup Prompt (Copy/Paste)
+
+```text
+Set up persistent agent policy files for this ATLAS repo so future sessions follow our workflow rules automatically.
+
+Please:
+1) Create or update AGENTS.md for Codex-style agents.
+2) Create or update CLAUDE.md (or READMECLAUDE.md if that is the active file) for Claude-style agents.
+3) Include these required rules in both files:
+   - Never push directly to ATLAS-MAIN.
+   - Always create/use a personal branch for task work.
+   - Open PRs targeting ATLAS-MAIN.
+   - Wait for group confirmation before merge.
+   - Keep commits small and list files changed.
+4) Keep wording concise and consistent across files.
+5) Show me the exact file paths and final content before committing.
+6) Commit and push on my personal branch only.
+```
+
 ### If The Agent Asks You To Add An SSH Key
 
 Complete these steps in GitHub:
@@ -118,3 +137,4 @@ The agent must follow these rules:
 6) Run available checks/tests when possible.
 7) Open PRs targeting `ATLAS-MAIN`.
 8) Wait for group confirmation before merge.
+9) If `AGENTS.md` / `CLAUDE.md` policy files exist, treat them as binding instructions.
